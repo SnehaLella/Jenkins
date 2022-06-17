@@ -6,7 +6,7 @@ pipeline{
         
         stage('scm clone'){
             steps{
-            git credentialsId: 'git', url: 'https://github.com/SnehaLella/Jenkins.git'
+            git url: 'https://github.com/SnehaLella/Jenkins.git'
             }
         }
         stage('build the code'){
