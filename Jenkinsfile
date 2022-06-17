@@ -2,11 +2,12 @@ pipeline{
     agent any 
     
     stages{
-        
-        
+	
         stage('scm clone'){
             steps{
-            git credentialsId: '37485573', url: 'https://github.com/SnehaLella/Jenkins.git'
+            git branch: 'main', 
+			credentialsId: 'SnehaLellasneha-9121806763', 
+			url: 'https://github.com/SnehaLella/Jenkins.git'
             }
         }
         stage('build the code'){
