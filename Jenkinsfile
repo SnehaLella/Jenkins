@@ -1,6 +1,10 @@
 pipeline{
     agent any 
-	    
+	 
+	 tools {  
+	  maven 'Maven 3.6.0'  
+	}
+    
     stages{
 	
         stage('scm clone'){
@@ -11,10 +15,9 @@ pipeline{
             }
         }
         stage('build the code'){
-                withMaven(maven: 'mvn') {
-                      sh "mvn clean package"
-                  }
-            
+            steps{
+                sh "mvn clean package"
+            }
         }
         stage('build image'){
             steps{
