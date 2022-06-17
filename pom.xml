@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>in.javahome</groupId>
+  <artifactId>helloworld</artifactId>
+  <packaging>war</packaging>
+  <version>1.0</version>
+  <name>helloworld Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>ip-172-31-19-155.us-east-2.compute.internal-releases</name>
+        <url>http://3.145.215.47:8081/artifactory/firstproject</url>
+    </repository>
+</distributionManagement>
+  
+  <build>
+    <finalName>helloworld</finalName>
+</build>
+</project>
