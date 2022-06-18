@@ -19,6 +19,12 @@ pipeline{
                 sh "mvn clean package"
             }
         }
+		 stage('Initialize'){
+		        steps{
+                def dockerHome = tool 'docker'
+                env.PATH = "${dockerHome}/bin:${env.PATH}"
+				}
+            }
         stage('build image'){
             steps{
                 sh "docker build . -t hello-world:${BUILD_NUMBER}"
