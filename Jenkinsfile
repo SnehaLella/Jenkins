@@ -3,6 +3,7 @@ pipeline{
 	 
 	 tools {  
 	  maven 'Maven 3.6.0'  
+	  docker 'docker'
 	}
     
     stages{
@@ -19,12 +20,6 @@ pipeline{
                 sh "mvn clean package"
             }
         }
-		 stage('Initialize'){
-		        steps{
-                def dockerHome = tool 'docker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"
-				}
-            }
         stage('build image'){
             steps{
                 sh "docker build . -t hello-world:${BUILD_NUMBER}"
