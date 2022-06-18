@@ -1,9 +1,8 @@
 pipeline{
-    agent any 
+    agent { docker { image 'Maven 3.6.0' } }
 	 
 	 tools {  
 	  maven 'Maven 3.6.0'  
-	  docker 'docker'
 	}
     
     stages{
